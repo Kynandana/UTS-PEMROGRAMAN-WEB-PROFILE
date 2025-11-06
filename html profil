@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Kynandana - Visual Storyteller</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!--  HEADER (NAVIGASI)  -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="nav-logo">Neragraphy</a>
+            
+            <!-- Mode desktop -->
+            <nav class="nav-menu">
+                <a href="#gallery">Gallery</a>
+                <a href="#about">About Me</a>
+                <a href="#contact" class="nav-button">Contact</a>
+            </nav>
+
+            <!-- Mode mobile -->
+            <button id="mobile-menu-btn" class="nav-toggle">
+                &#9776; <!-- ikon hamburger nya -->
+            </button>
+        </div>
+        <!-- Menu Mobile (Pop-up) -->
+    <!-- Tambah class 'hidden' biar sembunyi by default -->
+    <div id="mobile-menu" class="mobile-menu hidden">
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About Me</a>
+        <a href="#contact">Contact</a>
+    </div>
+    </header>
+
+    
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="container">
+
+        <!-- ===== HERO SECTION (Perkenalan) ===== -->
+        <div id="home" class="section hero-section">
+            <h1>Salam kenal, Nanda disini.<br>Seorang <span>Storyteller</span> & Content Creator</h1>
+            <p>Wellcome to my world!! tempat di mana setiap gambar punya ceritanya sendiri.</p>
+            <a href="#gallery" class="button">Klik disini</a>
+        </div>
+
+        <!-- ===== GALLERY SECTION ===== -->
+        <div id="gallery" class="section">
+            <h2>Kumpulan Momen</h2>
+            <div class="gallery-list">
+                
+                <div class="gallery-item">
+                    <img src="/picture uts/gathering.jpg" alt="Galeri 1">
+                    <h3>Cerita Perjalanan</h3>
+                </div>
+                <div class="gallery-item">
+                    <img src="/picture uts/cerita.JPG" alt="Galeri 2">
+                    <h3>Cerita Kehidupan</h3>
+                </div>
+                <div class="gallery-item">
+                    <img src="/picture uts/4 serangkai.jpg" alt="Galeri 3">
+                    <h3>Berburu Hidden Gems</h3>
+                </div>
+                <div class="gallery-item">
+                    <img src="/picture uts/gathering_gra.jpg" alt="Galeri 4">
+                    <h3>Potret Manusia</h3>
+                </div>
+                 <div class="gallery-item">
+                    <img src="/picture uts/mobil.JPG" alt="Galeri 5">
+                    <h3>Vintage Area</h3>
+                </div>
+                <div class="gallery-item">
+                    <img src="/picture uts/olahraga.JPG" alt="Galeri 6">
+                    <h3>Acara Event</h3>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ===== ABOUT SECTION ===== -->
+        <div id="about" class="section">
+            <h2>About Me</h2>
+            
+            <img src="/gambar diri.jpg" alt="Foto [Nama Kamu]" class="about-image">
+            
+            <!-- Ini paragraf yang dirombak total biar lebih "kamu banget" -->
+            <p>
+                Thanks ya udah nyasar kesini hahaha..
+            </p>
+            <p>
+               Btw, gw Nanda. Buat gw cerita itu ngga harus selalu ditulis panjang-panjang, kadang satu foto atau klip video aja udah bisa ngomong banyak hal.
+            </p>
+            <p>
+                Awalnya sih cuma iseng moto-moto aja, eh keterusan.
+                Sampai nemu dititik gw ngerasa lebih hidup, dengan bikin orang lain ngerasa hadir di momen yang gw liat. 
+                Kayak, “eh iya ya, gw pernah ngerasa kayak gini juga.” Dan itu bikin nagih banget buat terus nyeritain hal-hal kecil yang ternyata punya rasanya tersendiri.            </p>
+            <p>
+                Sekarang gw sering bikin konten dan bantu orang bercerita versi mereka sendiri. 
+                Kadang lewat foto, kadang video, kadang cuma lewat vibe yang pas aja. 
+                Intinya, gw suka banget kalau sesuatu yang gw bikin bisa bikin orang lain ngeh dan senyum dikit hehe.            </p>
+            <p>
+                Jadi ya, ini tempat di mana semua cerita ini ngumpul. Dari yang receh sampai yang dalem.
+                Kalau kamu juga suka cerita, mungkin kita bisa bikin bareng?
+            </p>
+
+        </div>
+
+        <!-- ===== CONTACT SECTION ===== -->
+        <div id="contact" class="section contact-section">
+            <h2>Ngobrol Yuk!</h2>
+            <p>Punya cerita seru buat dibagiin? yuk sharing bareng</p>
+            <a href="mailto:kinandanaaa@gmail.com" class="button">Kirim Email</a>
+            
+            <div class="social-links">
+                <a href="https://www.instagram.com/Kynandana_" target="_blank">Instagram</a>
+                <a href="https://www.tiktok.com/@neptvnvs_?_r=1&_t=ZS-916u8QL3ay2" target="_blank">TikTok</a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <!-- Tambahin "Visual Storyteller" -->
+        <p>&copy; <span id="current-year">2025</span> Neragraphy - Visual Storyteller.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
+
