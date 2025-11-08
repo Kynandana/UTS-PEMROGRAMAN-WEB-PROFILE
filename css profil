@@ -1,0 +1,310 @@
+/* ===============================================
+Alur Penjelasan:
+1.  Global Reset & Font Import
+2.  Aturan Tipografi Dasar (Fonts & Colors)
+3.  Komponen Reusable (Tombol & Container)
+4.  Layout Struktur (Header, Hero, Gallery, Dst)
+5.  Aturan Responsive (Media Query)
+===============================================
+*/
+
+/* ===== 1. GLOBAL RESET & FONT IMPORT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito:wght@400;700;800&display=swap');
+
+/* Reset bawaan browser */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+/* Bikin scroll jadi smooth */
+html {
+    scroll-behavior: smooth; 
+}
+
+/* ===== 2. TIPOGRAFI DASAR ===== */
+body {
+    font-family: 'Lora', serif; /* Font default 'storyteller' */
+    background-color: #ffffff; 
+    color: #333333;
+    line-height: 1.7; 
+}
+
+/* Aturan untuk SEMUA judul & navigasi */
+h1, h2, h3, h4, h5, h6, 
+.nav-logo, .nav-menu a, .button, 
+.mobile-menu a, .nav-button {
+    font-family: 'Nunito', sans-serif; /* Font 'friendly' */
+    font-weight: 700; 
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #111111; 
+}
+
+h1 { font-size: 2.8rem; } 
+h2 { font-size: 2rem; text-align: center; }
+h3 { font-size: 1.2rem; margin-top: 15px; margin-bottom: 10px; }
+
+p {
+    margin-bottom: 15px;
+    font-size: 1.1rem; 
+}
+
+ul {
+    list-style-position: inside;
+}
+
+img {
+    max-width: 100%; 
+    height: auto;
+    border-radius: 8px; 
+}
+
+/* ===== 3. KOMPONEN REUSABLE ===== */
+
+/* Cetakan untuk 'kotak' konten utama */
+.container {
+    max-width: 800px; 
+    margin: 0 auto; /* Trik centering */
+    padding: 0 15px; 
+}
+
+/* Cetakan untuk 'tombol' utama */
+.button {
+    display: inline-block;
+    background-color: #000000; 
+    color: #FFFFFF;
+    padding: 12px 20px;
+    border-radius: 50px; /* Bikin bulat */
+    text-decoration: none; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: #444444; 
+    transform: translateY(-2px); /* Efek 'mengambang' */
+}
+
+/* ===== 4. LAYOUT STRUKTUR (URUT DARI ATAS KE BAWAH) ===== */
+
+/* ----- 4A. Header & Navigasi ----- */
+.header {
+    background-color: #ffffff; 
+    border-bottom: 1px solid #eeeeee; 
+    padding: 15px 0;
+    position: sticky; /* Nempel di atas */
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* Logo kiri, menu kanan */
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 800; 
+    color: #111111; 
+    text-decoration: none;
+}
+
+/* Aturan untuk Menu Desktop (Sembunyi di HP) */
+.nav-menu {
+    display: none; /* Sembunyi by default */
+}
+
+.nav-menu a {
+    color: #555555; 
+    text-decoration: none;
+    margin-left: 20px; 
+}
+
+.nav-menu a:hover {
+    color: #000000; 
+}
+
+/* Tombol 'Contact' di Menu Desktop */
+.nav-menu a.nav-button {
+    background-color: #000000; 
+    color: #FFFFFF;
+    padding: 8px 16px;
+    border-radius: 50px; 
+    margin-left: 15px;
+}
+.nav-menu a.nav-button:hover {
+    background-color: #636363; 
+    color: #FFFFFF;
+}
+
+/* Tombol Hamburger (Muncul di HP) */
+.nav-toggle {
+    display: block; /* Muncul by default */
+    font-size: 1.5rem;
+    color: #111111;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Menu Pop-up Mobile */
+.mobile-menu {
+    background-color: #ffffff; 
+    border-bottom: 1px solid #eeeeee; 
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #333333; 
+    border-top: 1px solid #eeeeee; 
+}
+
+.mobile-menu a:hover {
+    background-color: #f9f9f9; 
+}
+
+/* Class 'hidden' dari JavaScript */
+.hidden {
+    display: none;
+}
+
+
+/* ----- 4B. Section (Dasar) ----- */
+.section {
+    padding: 60px 0; 
+    border-bottom: 1px solid #eeeeee; 
+}
+
+/* ----- 4C. Hero Section (Sapaan) ----- */
+.hero-section {
+    text-align: center;
+    min-height: 80vh; /* 80% tinggi layar */
+    display: flex; 
+    flex-direction: column; /* Tumpuk ke bawah */
+    justify-content: center; /* Center Vertikal */
+    align-items: center; /* Center Horizontal */
+}
+
+.hero-section p {
+    font-size: 1.3rem; 
+}
+
+/* Style buat kata 'Storyteller' */
+.hero-section span {
+    color: #ff0000; /* Warna merah */
+}
+
+
+/* ----- 4D. Gallery Section ----- */
+.gallery-list {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 kolom di HP */
+    gap: 20px; 
+}
+
+.gallery-item {
+    background-color: #FFFFFF; 
+    border: 1px solid #eeeeee; 
+    border-radius: 8px;
+    text-align: center;
+    overflow: hidden; /* Penting biar gambar rapi */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02); 
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px); /* Efek 'mengambang' */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.05); 
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;       
+    height: 300px;     /* Paksa tinggi gambar */
+    object-fit: cover; /* Paksa gambar jadi 'landscape' tanpa gepeng */
+}
+
+.gallery-item h3 {
+    padding: 20px 15px; 
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+
+/* ----- 4E. About Section ----- */
+.about-image {
+    width: 300px;        
+    height: 300px;       /* Paksa jadi persegi */
+    object-fit: cover; /* Biar foto nggak gepeng */
+    margin: 0 auto 20px auto;
+    display: block;
+    border-radius: 50%; /* Bikin jadi lingkaran */
+}
+
+
+/* ----- 4F. Contact Section ----- */
+.contact-section {
+    text-align: center;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    color: #000000;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* ----- 4G. Footer ----- */
+.footer {
+    text-align: center;
+    padding: 40px 15px; 
+    margin-top: 0; 
+    background-color: #f9f9f9;
+    color: #777777;
+    font-size: 0.9rem;
+    border-top: 1px solid #eeeeee;
+}
+
+
+/* ===== 5. ATURAN RESPONSIVE (MEDIA QUERY) ===== */
+/* 'Sihir' ini jalan kalau lebar layar MINIMAL 600px */
+@media (min-width: 600px) {
+
+    /* 1. Sembunyikan tombol hamburger */
+    .nav-toggle {
+        display: none;
+    }
+    
+    /* 2. Sembunyikan menu mobile */
+    .mobile-menu {
+        display: none !important; /* Paksa sembunyi */
+    }
+
+    /* 3. Tampilkan menu desktop */
+    .nav-menu {
+        display: flex; /* Bikin jadi barisan ke samping */
+        align-items: center;
+    }
+
+    /* 4. UBAH GALLERY JADI 2 KOLOM */
+    .gallery-list {
+        grid-template-columns: 1fr 1fr; /* 2 kolom sama besar */
+    }
+}
