@@ -1,0 +1,49 @@
+// Kita tambahkan "event listener" ke 'document' (halaman HTML-nya)
+// 'DOMContentLoaded' artinya "saat semua HTML sudah dimuat"
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Ambil tombol hamburger
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    // 2. Ambil menu mobile-nya
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // 3. Tambahkan 'event listener' (pendengar) 'click' ke tombol
+    // Kita tambahkan pengecekan "if" untuk keamanan
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            // 4. Setiap kali tombol di-klik, toggle (tambah/hapus) class 'hidden'
+            // 'classList' adalah properti elemen
+            // 'toggle' adalah method (fungsi) dari classList
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+
+
+    // 5. (Opsional) Menutup menu mobile jika user klik link di dalamnya
+    // Ambil SEMUA link di dalam menu mobile
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+    // Loop (ulangi) untuk setiap link
+    mobileMenuLinks.forEach(link => {
+        // Tambahkan event listener 'click' ke setiap link
+        link.addEventListener('click', () => {
+            // Jika link di-klik, tambahkan class 'hidden' untuk menutup menu
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
+
+    // === Script untuk Tahun Copyright Otomatis ===
+
+    // 1. Ambil elemen span dengan id 'current-year'
+    const yearSpan = document.getElementById('current-year');
+    
+    if (yearSpan) {
+        // 2. Buat objek Tanggal baru (new Date())
+        // 3. Ambil tahunnya saja (.getFullYear())
+        const currentYear = new Date().getFullYear();
+        // 4. Masukkan tahun sekarang ke dalam elemen span tadi
+        yearSpan.textContent = currentYear;
+    }
+
+});
+
